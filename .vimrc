@@ -101,10 +101,10 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Color!
-colorscheme railscasts
-set guifont=Menlo:h13
-
 " NERDTree
 map <F2> :NERDTreeToggle<cr>
 nnoremap <leader>b :NERDTreeBookmark .
+
+" Color!
+colorscheme railscasts
+set guifont=Menlo:h13
