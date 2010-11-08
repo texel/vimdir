@@ -45,8 +45,7 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 set wrap
-set textwidth=79
-set formatoptions=qrn1
+set textwidth=79 set formatoptions=qrn1
 
 
 " Textmate-style whitespace characters
@@ -54,16 +53,16 @@ set list
 set listchars=tab:▸\ ,eol:¬
 
 " No arrow keys nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <up> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-nnoremap j gj
-nnoremap k gk
+" nnoremap <down> <nop>
+" nnoremap <up> <nop>
+" nnoremap <left> <nop>
+" nnoremap <right> <nop>
+" inoremap <up> <nop>
+" inoremap <down> <nop>
+" inoremap <left> <nop>
+" inoremap <right> <nop>
+" nnoremap j gj
+" nnoremap k gk
 
 " Disable help key
 inoremap <F1> <ESC>
@@ -108,3 +107,14 @@ nnoremap <leader>b :NERDTreeBookmark .
 " Color!
 colorscheme railscasts
 set guifont=Menlo:h13
+
+" Tab mappings
+map <leader>tt :tabnew<cr>
+map <leader>te :tabedit
+map <leader>tc :tabclose<cr>
+map <leader>to :tabonly<cr>
+map <leader>tn :tabnext<cr>
+map <leader>tp :tabprevious<cr>
+map <leader>tf :tabfirst<cr>
+map <leader>tl :tablast<cr>
+map <leader>tm :tabmove
