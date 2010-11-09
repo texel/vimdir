@@ -29,6 +29,8 @@ set backspace=indent,eol,start
 set laststatus=2
 set relativenumber
 set undofile
+set pastetoggle=<F3>
+set virtualedit=all
 
 let mapleader = ","
 
@@ -45,7 +47,8 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 set wrap
-set textwidth=79 set formatoptions=qrn1
+set textwidth=79 
+set formatoptions=qrn1
 
 
 " Textmate-style whitespace characters
@@ -70,7 +73,7 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 " Map ; to :
-nnoremap ; :
+" nnoremap ; :
 " Map jj to Escape
 imap jj <Esc>
 
@@ -105,11 +108,10 @@ map <F2> :NERDTreeToggle<cr>
 nnoremap <leader>b :NERDTreeBookmark .
 
 " Color!
-colorscheme molokai
+colorscheme railscasts_edit
 set guifont=Menlo:h13
 
 " Tab mappings
-map <leader>tt :tabnew<cr>
 map <leader>te :tabedit
 map <leader>tc :tabclose<cr>
 map <leader>to :tabonly<cr>
@@ -118,3 +120,6 @@ map <leader>tp :tabprevious<cr>
 map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
+
+" Tabularize mappings
+map <C-S-t> :Tabularize /=.*<cr>
