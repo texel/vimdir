@@ -105,7 +105,7 @@ map <F2> :NERDTreeToggle<cr>
 nnoremap <leader>b :NERDTreeBookmark .
 
 " Color!
-colorscheme railscasts
+colorscheme molokai
 set guifont=Menlo:h13
 
 " Tab mappings
