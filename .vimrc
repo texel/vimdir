@@ -32,6 +32,17 @@ set undofile
 set pastetoggle=<F3>
 set virtualedit=all
 
+" Textmate indentation shortcuts
+nmap <D-[> <<
+nmap <D-]> >>
+vmap <D-[> <gv
+vmap <D-]> >gv
+
+" Textmate-style cmd+return
+inoremap <D-return> <esc>o
+nnoremap <D-return> o
+vnoremap <D-return> o
+
 let mapleader = ","
 
 nnoremap / /\v
@@ -46,14 +57,20 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
-set wrap
-set textwidth=79 
-set formatoptions=qrn1
+" Reselect after visual mode indent
+vnoremap > >gv 
+vnoremap < <gv 
+
+" set wrap
+" set textwidth=79 
+" set formatoptions=qrn1
+set wrap linebreak textwidth=0
 
 
 " Textmate-style whitespace characters
-set list
+set nolist
 set listchars=tab:▸\ ,eol:¬
+map <leader>l :set list!<cr>
 
 " No arrow keys nnoremap <up> <nop>
 " nnoremap <down> <nop>
@@ -89,7 +106,7 @@ nnoremap <leader>a :Ack
 nnoremap <leader>ft Vatzf
 
 " Re-select just-pasted text
-nnoremap <leader>v V`]
+nnoremap <leader>v V`[
 
 " Quick-open .vimrc
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
@@ -102,10 +119,13 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <C-o> <C-w>o
 
 " NERDTree
 map <F2> :NERDTreeToggle<cr>
 nnoremap <leader>b :NERDTreeBookmark .
+let NERDTreeShowHidden=1
+let NERDTreeWinSize=60
 
 " Color!
 colorscheme railscasts_edit
@@ -123,3 +143,9 @@ map <leader>tm :tabmove
 
 " Tabularize mappings
 map <C-S-t> :Tabularize /=.*<cr>
+
+" Hide the toolbar by default
+set guioptions-=T 
+
+" AutoClose
+let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"'}
