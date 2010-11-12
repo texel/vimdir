@@ -43,6 +43,15 @@ inoremap <D-return> <esc>o
 nnoremap <D-return> o
 vnoremap <D-return> o
 
+inoremap <C-a> <esc>^i
+inoremap <C-e> <esc>A
+nnoremap <C-a> ^
+nnoremap <C-e> $
+
+
+" Paste and reindent automatically
+nnoremap gpp gpv`[=
+
 let mapleader = ","
 
 nnoremap / /\v
@@ -93,6 +102,7 @@ vnoremap <F1> <ESC>
 " nnoremap ; :
 " Map jj to Escape
 imap jj <Esc>
+inoremap <C-j> <Esc>
 
 " Auto save on lost focus
 " au FocusLost * :wa
@@ -149,3 +159,7 @@ set guioptions-=T
 
 " AutoClose
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"'}
+
+" Rails!
+imap <C-S-+> <space><esc>ysw=f<space>a
+
