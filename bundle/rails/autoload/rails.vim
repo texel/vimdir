@@ -4685,7 +4685,7 @@ function! s:BufSettings()
       " difficult if you really don't want a hyphen in Rails ERuby files.  If
       " this is your desire, you will need to accomplish it via a rails.vim
       " autocommand.
-      if self.getvar('surround_45') == '' || self.getvar('surround_45') == "<% \r %>" " -
+      if self.getvar('surround_45') == ''
         call self.setvar('surround_45', "<% \r -%>")
       endif
       if self.getvar('surround_61') == '' " =

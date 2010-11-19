@@ -6,6 +6,9 @@ set nocompatible
 
 set modelines=0
 
+" Swap files and undo files
+set dir=~/tmp,/var/tmp,/tmp,.
+
 " Tabs
 set tabstop=2
 set shiftwidth=2
@@ -42,11 +45,14 @@ vmap <D-]> >gv
 inoremap <D-return> <esc>o
 nnoremap <D-return> o
 vnoremap <D-return> o
+nnoremap <C-return> o<esc>
 
 inoremap <C-a> <esc>^i
 inoremap <C-e> <esc>A
 nnoremap <C-a> ^
+vnoremap <C-a> ^
 nnoremap <C-e> $
+vnoremap <C-e> $
 
 
 " Paste and reindent automatically
@@ -103,6 +109,7 @@ vnoremap <F1> <ESC>
 " Map jj to Escape
 imap jj <Esc>
 inoremap <C-j> <Esc>
+vnoremap <C-j> <Esc>
 
 " Auto save on lost focus
 " au FocusLost * :wa
@@ -161,5 +168,7 @@ set guioptions-=T
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"'}
 
 " Rails!
-imap <C-S-+> <space><esc>ysw=f<space>a
-
+imap <C-]>= <space><esc>ysw=f<space>a
+imap <C-]>- <space><esc>ysw-f<space>a
+let g:surround_45 = "<% \r %>"
+inoremap <C-l> <space>=><space>
