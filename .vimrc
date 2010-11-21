@@ -46,6 +46,7 @@ inoremap <D-return> <esc>o
 nnoremap <D-return> o
 vnoremap <D-return> o
 nnoremap <C-return> o<esc>
+inoremap <C-k> <esc><up>i
 
 inoremap <C-a> <esc>^i
 inoremap <C-e> <esc>A
@@ -54,6 +55,9 @@ vnoremap <C-a> ^
 nnoremap <C-e> $
 vnoremap <C-e> $
 
+" Sparkup
+let g:sparkupExecuteMapping = "<c-t>"
+let g:sparkupNextMapping = "<c-y>"
 
 " Paste and reindent automatically
 nnoremap gpp gpv`[=
@@ -73,7 +77,7 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 " Reselect after visual mode indent
-vnoremap > >gv 
+vnoremap > >gv                 "
 vnoremap < <gv 
 
 " set wrap
