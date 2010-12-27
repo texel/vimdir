@@ -4,6 +4,9 @@ filetype plugin indent on
 
 set nocompatible
 
+" I'm impatient!
+set autoread
+
 set modelines=0
 
 " Swap files and undo files
@@ -171,8 +174,12 @@ set guioptions-=T
 " AutoClose
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"'}
 
+" Center search results
+nnoremap n nzz
+nnoremap N Nzz
+
 " Rails!
-imap <C-]>= <space><esc>ysw=f<space>a
-imap <C-]>- <space><esc>ysw-f<space>a
+imap <C-]>= <space><esc>ysw=f<space>a<esc>mef>lx`ea
+imap <C-]>- <space><esc>ysw-f<space>a<esc>mef>lx`ea 
 let g:surround_45 = "<% \r %>"
 inoremap <C-l> <space>=><space>

@@ -1,5 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/opt/local/etc/nginx'
-let g:netrw_dirhist_2='/Users/texel/Documents/Onehub/git/macchiato'
-let g:netrw_dirhist_3='/Users/texel/Documents/Onehub/git/doppio'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/texel/Documents/git/gripston-omega'
+let g:netrw_dirhist_2='/Users/texel/Documents/Onehub/git/awesome_nested_set'
+let g:netrw_dirhist_3='/Users/texel/Documents/Onehub/git/macchiato'
+let g:netrw_dirhist_4='/Users/texel/Documents/git/gripston-omega'
+let g:netrw_dirhist_5='/Users/texel/Documents/Onehub/git/awesome_nested_set'
+let g:netrw_dirhist_6='/Users/texel/Documents/Onehub/git/macchiato'
+let g:netrw_dirhist_7='/opt/local/etc/nginx'
+let g:netrw_dirhist_8='/Users/texel/Documents/Onehub/git/barista'
+let g:netrw_dirhist_9='/opt/local/etc/nginx'
