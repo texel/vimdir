@@ -10,7 +10,8 @@ set autoread
 set modelines=0
 
 " Swap files and undo files
-set dir=~/tmp,/var/tmp,/tmp,.
+set dir=~/.vimswap//,/var/tmp//,/tmp//,.
+set undodir=~/.vimundo/
 
 " Tabs
 set tabstop=2
@@ -74,8 +75,11 @@ set smartcase
 set gdefault
 set incsearch
 set showmatch
-set hlsearch
-nnoremap <leader><space> :noh<cr>
+
+" Don't highlight search by default, and set a leader
+" to toggle highlight.
+set nohlsearch
+nnoremap <leader><space> :set hlsearch! hlsearch?<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
@@ -183,3 +187,19 @@ imap <C-]>= <space><esc>ysw=f<space>a<esc>mef>lx`ea
 imap <C-]>- <space><esc>ysw-f<space>a<esc>mef>lx`ea 
 let g:surround_45 = "<% \r %>"
 inoremap <C-l> <space>=><space>
+
+map <leader>y :YRShow<cr>
+inoremap ,p <esc>
+
+" Screen lines, not logical lines
+nnoremap k gk
+vnoremap k gk
+"nnoremap! <Up> <C-O>gk
+noremap j gj
+vnoremap j gj
+"nnoremap! <Down> <C-O>gj
+" the following are optional, to move by file lines using Alt-arrows
+"nnoremap! <M-Up> <Up>
+"nnoremap! <M-Down> <Down>
+nnoremap <M-Up> k
+nnoremap <M-Down> j
