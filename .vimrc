@@ -52,6 +52,9 @@ vnoremap <D-return> o
 nnoremap <C-return> o<esc>
 inoremap <C-k> <esc><up>i
 
+" Return and put cursor inside block
+inoremap <A-return> <return><esc><S-o>
+
 inoremap <C-a> <esc>^i
 inoremap <C-e> <esc>A
 nnoremap <C-a> ^
@@ -142,6 +145,9 @@ nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 " Open a vertical split, switch over to it
 nnoremap <leader>w <C-w>v<C-w>l
 
+" Open a horizontal swplit, switch over to it
+nnoremap <leader>s <C-w>s<C-j>
+
 " Vertical split navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -154,6 +160,9 @@ map <F2> :NERDTreeToggle<cr>
 nnoremap <leader>b :NERDTreeBookmark .
 let NERDTreeShowHidden=1
 let NERDTreeWinSize=60
+
+" NERDCommenter
+let NERDSpaceDelims=1
 
 " Color!
 colorscheme railscasts_edit
