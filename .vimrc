@@ -148,6 +148,16 @@ nnoremap <leader>w <C-w>v<C-w>l
 " Open a horizontal swplit, switch over to it
 nnoremap <leader>s <C-w>s<C-j>
 
+" :CtrlP
+nnoremap <leader>p :CtrlP<return>
+let g:ctrlp_max_height = 30
+let g:ctrlp_open_new_file = 't'
+let g:ctrlp_open_multiple_files = 't'
+let g:ctrlp_prompt_mappings = { 
+  \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
+  \ 'AcceptSelection("t")': ['<cr>', '<c-t>']
+  \}
+
 " Vertical split navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j

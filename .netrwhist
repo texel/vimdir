@@ -1,3 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/Users/texel/Documents/Onehub/git/doppio'
+let g:netrw_dirhist_2='/Users/texel/Documents/Onehub/git/doppio-rails-3/doppio'
+let g:netrw_dirhist_3='/Users/texel/Documents/Onehub/git/doppio'
+let g:netrw_dirhist_4='/Users/texel/Documents/Onehub/git/buildmaster/doppio'
+let g:netrw_dirhist_5='/Users/texel/Documents/Onehub/git/doppio'
