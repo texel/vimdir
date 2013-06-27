@@ -163,13 +163,16 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-nnoremap <C-o> <C-w>o
+" nnoremap <C-o> <C-w>o
 
 " NERDTree
 map <F2> :NERDTreeToggle<cr>
 nnoremap <leader>b :NERDTreeBookmark .
 let NERDTreeShowHidden=1
 let NERDTreeWinSize=60
+
+" Tagbar
+map <F4> :TagbarToggle<cr>
 
 " NERDCommenter
 let NERDSpaceDelims=1
@@ -222,3 +225,12 @@ vnoremap j gj
 "nnoremap! <M-Down> <Down>
 nnoremap <M-Up> k
 nnoremap <M-Down> j
+
+function FixErb()
+  echo "hello!"
+  execute "%s/<%-/<%/"
+  execute "%s/-%>/%>/"
+endfunction
+
+" Autocmds!
+" autocmd BufWritePre *.rb :%s/\s\+$//e

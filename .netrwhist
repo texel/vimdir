@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/Users/texel/Documents/Onehub/git/doppio'
-let g:netrw_dirhist_2='/Users/texel/Documents/Onehub/git/doppio-rails-3/doppio'
+let g:netrw_dirhist_2='/Users/texel/.rvm/gems/ruby-1.9.3-p362-perf/gems/hogan_assets-1.6.0'
 let g:netrw_dirhist_3='/Users/texel/Documents/Onehub/git/doppio'
 let g:netrw_dirhist_4='/Users/texel/Documents/Onehub/git/buildmaster/doppio'
-let g:netrw_dirhist_5='/Users/texel/Documents/Onehub/git/doppio'
+let g:netrw_dirhist_5='/Users/texel/Documents/Onehub/git/configurator'
+let g:netrw_dirhist_6='/Users/texel/Documents/Onehub/git/doppio'
