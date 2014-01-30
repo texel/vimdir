@@ -1,5 +1,5 @@
 filetype off
-call pathogen#runtime_append_all_bundles()
+call pathogen#incubate()
 filetype plugin indent on
 
 set nocompatible
@@ -145,7 +145,7 @@ nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 " Open a vertical split, switch over to it
 nnoremap <leader>w <C-w>v<C-w>l
 
-" Open a horizontal swplit, switch over to it
+" Open a horizontal split, switch over to it
 nnoremap <leader>s <C-w>s<C-j>
 
 " Don't screw up folds when inserting text that might affect them, until
@@ -198,7 +198,11 @@ map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
 " Tabularize mappings
-map <C-S-t> :Tabularize /=.*<cr>
+"
+" Align assignments
+map <C-t>t :Tabularize /=.*<cr>
+" Align JSON-style keys/values
+map <C-t>j :Tabularize/\w:\zs/l0l1<cr>
 
 " Hide the toolbar by default
 set guioptions-=T 
@@ -240,3 +244,5 @@ endfunction
 
 " Autocmds!
 " autocmd BufWritePre *.rb :%s/\s\+$//e
+
+
