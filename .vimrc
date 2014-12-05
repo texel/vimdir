@@ -1,8 +1,105 @@
 filetype off
-call pathogen#incubate()
+" call pathogen#incubate()
 filetype plugin indent on
 
 set nocompatible
+
+" VUNDLE ========================================
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+" Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" " Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" " git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" " The sparkup vim script is in a subdirectory of this repo called vim.
+" " Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" " Avoid a name conflict with L9
+" Plugin 'user/L9', {'name': 'newL9'}
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tmhedberg/matchit'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'myusuf3/numbers.vim'
+Plugin 'puppetlabs/puppet-syntax-vim'
+Plugin 'hrp/rainbow-parenthesis'
+Plugin 'danro/rename.vim'
+Plugin 'rstacruz/sparkup'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'godlygeek/tabular'
+Plugin 'Townk/vim-autoclose'
+Plugin 'tpope/vim-bundler'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'tpope/vim-dispatch'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-haml'
+Plugin 'pangloss/vim-javascript'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'Lokaltog/powerline'
+Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-repeat'
+Plugin 'airblade/vim-rooter'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'jpalardy/vim-slime'
+Plugin 'tpope/vim-surround'
+Plugin 'kana/vim-textobj-user'
+Plugin 'skalnik/vim-vroom'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/syntastic'
+Plugin 'wellbredgrapefruit/tomdoc.vim'
+Plugin 'jc00ke/vim-tomdoc'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'lukaszb/vim-web-indent'
+Plugin 'Keithbsmiley/rspec.vim'
+Plugin 'ingydotnet/yaml-vim'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'evanmiller/nginx-vim-syntax'
+Plugin 'majutsushi/tagbar'
+Plugin 'marijnh/tern_for_vim'
+
+Plugin 'vim-scripts/EasyGrep'
+Plugin 'vim-scripts/IndentAnything'
+Plugin 'vim-scripts/YankRing.vim'
+Plugin 'vim-scripts/Align'
+Plugin 'vim-scripts/AutoAlign'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
+"================================================
+
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList          - list configured plugins
+" :PluginInstall(!)    - install (update) plugins
+" :PluginSearch(!) foo - search (or refresh cache first) for foo
+" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 
 " I'm impatient!
 set autoread
@@ -156,6 +253,8 @@ autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:las
 
 " :CtrlP
 nnoremap <leader>p :CtrlP<return>
+nnoremap <leader>b :CtrlPBuffer<return>
+nnoremap <leader><C-p> :CtrlPBuffer<return>
 let g:ctrlp_max_height = 30
 let g:ctrlp_open_new_file = 't'
 let g:ctrlp_open_multiple_files = 't'
@@ -173,12 +272,13 @@ nnoremap <C-l> <C-w>l
 
 " NERDTree
 map <F2> :NERDTreeToggle<cr>
-nnoremap <leader>b :NERDTreeBookmark .
+" nnoremap <leader>b :NERDTreeBookmark .
 let NERDTreeShowHidden=1
 let NERDTreeWinSize=60
 
 " Tagbar
 map <F4> :TagbarToggle<cr>
+map <leader>g :TagbarToggle<cr>
 
 " NERDCommenter
 let NERDSpaceDelims=1
@@ -236,11 +336,22 @@ vnoremap j gj
 nnoremap <M-Up> k
 nnoremap <M-Down> j
 
-function FixErb()
+function! FixErb()
   echo "hello!"
-  execute "%s/<%-/<%/"
-  execute "%s/-%>/%>/"
+  execute "%s/<%/<%/"
+  execute "%s/%>/%>/"
 endfunction
+
+" Initialize autoalign plugin
+"  Initialize: {{{1
+set nocp
+if version >= 600
+ filetype plugin indent on
+endif 
+
+" Ignore items in tmp
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip " Standard Mac OS X
+set wildignore+=*/public/assets/* " Ignore generated assets
 
 " Autocmds!
 " autocmd BufWritePre *.rb :%s/\s\+$//e

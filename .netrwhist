@@ -1,4 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/texel/Documents/git/siren_client'
-let g:netrw_dirhist_2='/Users/texel/.vim'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/texel/Documents/Onehub/git/drip'
+let g:netrw_dirhist_2='/Users/texel/Documents/Onehub/git/doppio'
+let g:netrw_dirhist_3='/Users/texel/Documents/git/Siren'
+let g:netrw_dirhist_4='/Users/texel/Documents/Onehub/git/barista'
+let g:netrw_dirhist_5='/Users/texel/Documents/Onehub/git/pdfjs'
+let g:netrw_dirhist_6='/Users/texel/Documents/Onehub/git/doppio'
